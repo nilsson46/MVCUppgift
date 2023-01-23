@@ -17,7 +17,7 @@ public class CoworkerController {
         return "home";
     }
 
-    @PostMapping
+    @PostMapping("/home")
 
     public String switchToInvoicePage(@RequestParam String username, @RequestParam String password, ModelMap model){
         if("cow1".equalsIgnoreCase(username) && "1234".equals(password)){
