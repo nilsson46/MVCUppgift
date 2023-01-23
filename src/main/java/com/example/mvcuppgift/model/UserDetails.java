@@ -1,6 +1,6 @@
 package com.example.mvcuppgift.model;
 
-public class Login {
+public class UserDetails {
 
     private int id;
 

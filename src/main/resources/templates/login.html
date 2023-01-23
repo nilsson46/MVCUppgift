@@ -1,5 +1,5 @@
 <form method="POST" >
-  <h2> Sign in form</h2>
+  <h2> Welcome </h2>
   <label>Username</label>
   <input type="text" name="username" />
 
@@ -9,10 +9,7 @@
 
   <br>
 
-  <p th:if="${session.loginAttempts != null}" >
-    Login attempts: <label th:text="${session.loginAttempts}"></label>
-  </p>
   <button type="submit">Login</button>
+  <p th:if="${error}"></p>
 
-  <pre> ${error}</pre>
 </form>
