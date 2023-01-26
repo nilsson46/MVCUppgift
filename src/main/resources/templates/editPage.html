@@ -1,9 +1,21 @@
-<form method="POST" >
-  <h2> Edit </h2>
-  <br>
+<form>
+
+  <label> Title</label>
+    <input type="text" th:value="${invoice.title}" name="title" />
+
+    <br>
+    <label>Description</label>
+    <input type="text" name="description" />
+
+    <br>
+    <label>Category</label>
+    <input type="text"  name="category" />
+
+    <br>
+    <label>Price</label>
+    <input type="number" name="price" />
+
+    <button type="submit" formaction="editPage/update" formmethod="post">Add</button>
 
 </form>
-<form action="invoicePage" method="GET" >
 
-  <button type="submit">Save</button>
-</form>

@@ -21,26 +21,17 @@
             <td th:text="${invoice.description}" />
             <td th:text="${invoice.category}" />
             <td th:text="${invoice.price}" />
-            <td>
-                <button type="submit" formaction="payment" formmethod="GET">Register new invoice</button>
-                <button type="submit" formmethod="post">Edit</button>
-            </td>
+                <td>
+
+                <button type="submit" formaction="invoicePage/update" formmethod="post">Edit</button>
+                <button type="submit" formaction="invoicePage/delete" formmethod="post">Delete</button>
+                <input type="text" th:value="${invoice.id}" name="invoiceId">
+
 
         </tr>
     </tbody>
 </table>
-
-
-
     <br>
-
-
-
-
-
-
-
-
     <button type="submit" formaction="login" formmethod="GET">Logout</button>
-
+    <button type="submit" formaction="payment" formmethod="GET">Register new invoice</button>
 </form>

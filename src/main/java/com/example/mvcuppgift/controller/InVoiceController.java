@@ -1,5 +1,6 @@
 package com.example.mvcuppgift.controller;
 
+import com.example.mvcuppgift.Service.InvoiceService;
 import com.example.mvcuppgift.model.Invoice;
 import com.example.mvcuppgift.repo.InvoiceRepository;
 import jakarta.servlet.http.HttpSession;
@@ -10,6 +11,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class InVoiceController {
@@ -29,9 +33,17 @@ public class InVoiceController {
         return "invoicePage";
     }
 
-    @PostMapping("invoicePage")
+    @PostMapping("invoicePage/update")
     public String switchToEditPage() {
-        System.out.println("Edit");
-        return "redirect:editPage";
+        return "redirect:/editPage";
     }
+
+    @PostMapping("invoicePage/delete")
+    public String deleteInvoice(@RequestParam int invoiceId ){
+        invoiceRepository.deleteAInvoice(invoiceId);
+        return "redirect:/invoicePage";
+    }
+
+
+
 }

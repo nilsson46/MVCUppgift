@@ -1,6 +1,7 @@
 package com.example.mvcuppgift.model;
 
-public class Invoice {
+
+public class EditPage {
     private String title;
     private String description;
     private String category;
@@ -12,7 +13,7 @@ public class Invoice {
 
     private int id;
 
-    public Invoice(String title, String description, String category, double price, String username) {
+    public EditPage(String title, String description, String category, double price, String username) {
         this.title = title;
         this.description = description;
         this.category = category;
@@ -20,17 +21,9 @@ public class Invoice {
         this.username = username;
     }
 
-    public Invoice() {
+    public EditPage() {
 
     }
-
-    public Invoice(String title, String description, String category, int price) {
-        this.title = title;
-        this.description = description;
-        this.category = category;
-        this.price = price;
-    }
-
 
     public int getId() {
         return id;

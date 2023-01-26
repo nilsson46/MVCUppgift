@@ -1,0 +1,30 @@
+<form>
+  <table>
+    <tbody>
+    <tr th:each="invoice:${invoices}">
+    </tbody>
+
+  <label> Title</label>
+  <input type="text" th:value="${invoice.titlename}" name="title" />
+
+  <br>
+  <label>Description</label>
+  <input type="text" name="description" />
+
+  <br>
+  <label>Category</label>
+  <input type="text"  name="category" />
+
+  <br>
+  <label>Price</label>
+  <input type="number" name="price" />
+
+  <button type="submit" formaction="editPage/update" formmethod="post">Add</button>
+
+    <br>
+
+    </tr>
+
+  </table>
+
+</form>

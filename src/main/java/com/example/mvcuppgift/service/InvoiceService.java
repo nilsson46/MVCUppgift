@@ -23,5 +23,7 @@ public class InvoiceService {
     public void addInvoice(Invoice invoice) {
         invoiceRepository.addInvoice(invoice);
     }
+
+
 }
 

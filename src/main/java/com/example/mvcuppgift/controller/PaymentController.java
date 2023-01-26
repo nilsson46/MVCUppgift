@@ -29,7 +29,6 @@ public class PaymentController {
     //Create
     @PostMapping("payment")
     public String addInvoice(@RequestParam String title, @RequestParam String description, @RequestParam String category, @RequestParam int price, HttpSession session) {
-
         invoiceService.addInvoice(new Invoice(title,description,category,price, (String) session.getAttribute("username")));
         return "redirect:invoicePage";
 
