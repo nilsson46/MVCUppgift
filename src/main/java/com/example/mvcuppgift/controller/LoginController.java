@@ -17,15 +17,14 @@ public class LoginController {
     private InvoiceRepository invoiceRepository;
 
 
-
     @Autowired
-    public LoginController(AuthService authService, InvoiceRepository invoiceRepository){
+    public LoginController(AuthService authService, InvoiceRepository invoiceRepository) {
         this.authService = authService;
         this.invoiceRepository = invoiceRepository;
     }
 
     @GetMapping("login")
-    public String switchToHomePage(){
+    public String switchToHomePage() {
         return "login";
     }
 
@@ -34,16 +33,16 @@ public class LoginController {
 
     public String switchToInvoicePage(HttpSession session, @RequestParam String username, @RequestParam String password, ModelMap model) {
 
-            if (authService.authLogin(username, password)) {
-                session.setAttribute("username", username);
-                session.setMaxInactiveInterval(60*15);
+        if (authService.authLogin(username, password)) {
+            session.setAttribute("username", username);
+            session.setMaxInactiveInterval(60 * 15);
 
-                return "redirect:invoicePage";
+            return "redirect:invoicePage";
 
-            } else {
-                model.put("error", "Incorrect Username or password");
-                return "login";
-            }
+        } else {
+            model.put("error", "Incorrect Username or password");
+            return "login";
         }
     }
+}
 

@@ -17,21 +17,20 @@ public class InVoiceController {
     private InvoiceRepository invoiceRepository;
 
     @Autowired
-    public InVoiceController(InvoiceRepository invoiceRepository){
+    public InVoiceController(InvoiceRepository invoiceRepository) {
         this.invoiceRepository = invoiceRepository;
     }
 
 
     @GetMapping("invoicePage")
-    public String switchToInvoicePage(ModelMap model, HttpSession session){
-        System.out.println("Yes");
-       String username = (String)session.getAttribute("username");
-
+    public String switchToInvoicePage(ModelMap model, HttpSession session) {
+        String username = (String) session.getAttribute("username");
         model.put("invoices", invoiceRepository.findInvoiceByUsername(username));
         return "invoicePage";
     }
+
     @PostMapping("invoicePage")
-    public String switchToEditPage(){
+    public String switchToEditPage() {
         System.out.println("Edit");
         return "redirect:editPage";
     }

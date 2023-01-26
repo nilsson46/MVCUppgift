@@ -12,13 +12,15 @@ public class UserDetailsService {
     public UserDetailsService(UserDetailsRepository userDetailsRepository) {
         this.userDetailsRepository = userDetailsRepository;
     }
-    public String selectUserByUsername(String username){
-        if(userDetailsRepository.selectPersonUsername(username)!=null)
+
+    public String selectUserByUsername(String username) {
+        if (userDetailsRepository.selectPersonUsername(username) != null)
             return userDetailsRepository.selectPersonUsername(username).getUsername();
         return "";
     }
-    public String selectUserByPassword(String password){
-        if(userDetailsRepository.selectPersonByPassword(password)!=null)
+
+    public String selectUserByPassword(String password) {
+        if (userDetailsRepository.selectPersonByPassword(password) != null)
             return userDetailsRepository.selectPersonByPassword(password).getPassword();
         return "";
     }

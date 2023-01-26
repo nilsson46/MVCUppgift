@@ -1,24 +1,24 @@
 package com.example.mvcuppgift.model;
 
 public class Invoice {
-private String title;
-private String description;
-private String category;
-private double price;
+    private String title;
+    private String description;
+    private String category;
+    private double price;
 
-private String username;
+    private String username;
 
-private String date;
+    private String date;
 
-    public Invoice(String title,String description, String category, double price, String username) {
-        this.title= title;
-        this.description= description;
+    public Invoice(String title, String description, String category, double price, String username) {
+        this.title = title;
+        this.description = description;
         this.category = category;
         this.price = price;
         this.username = username;
     }
 
-    public Invoice(){
+    public Invoice() {
 
     }
 

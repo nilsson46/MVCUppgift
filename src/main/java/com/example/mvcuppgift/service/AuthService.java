@@ -10,7 +10,8 @@ public class AuthService {
     public AuthService(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
-    public boolean authLogin(String username, String password){
+
+    public boolean authLogin(String username, String password) {
         boolean isUsernameAuth = userDetailsService.selectUserByUsername(username).equals(username);
         boolean isPasswordAuth = userDetailsService.selectUserByPassword(password).equals(password);
         return isUsernameAuth && isPasswordAuth;

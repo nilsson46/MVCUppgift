@@ -6,8 +6,8 @@ import java.util.List;
 public class InvoiceList {
     private List<Invoice> invoiceList;
 
-    public InvoiceList(){
+    public InvoiceList() {
 
-        this.invoiceList=new ArrayList<>();
+        this.invoiceList = new ArrayList<>();
     }
 }
