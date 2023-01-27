@@ -1,21 +1,30 @@
-<form>
+<form action="editPage/Edit" method="POST" >
+  <h2> Welcome </h2>
+  <label>Title</label>
+  <input type="text" name="title" />
 
-  <label> Title</label>
-    <input type="text" th:value="${invoice.title}" name="title" />
+  <br>
+  <label>Description</label>
+  <input type="text" name="description" />
 
-    <br>
-    <label>Description</label>
-    <input type="text" name="description" />
+  <br>
+  <label>Category</label>
+  <input type="text" name="category" />
 
-    <br>
-    <label>Category</label>
-    <input type="text"  name="category" />
+  <br>
+  <label>Price</label>
+  <input type="number" name="price" />
 
-    <br>
-    <label>Price</label>
-    <input type="number" name="price" />
+  <br>
+  <tbody>
 
-    <button type="submit" formaction="editPage/update" formmethod="post">Add</button>
+  <tr th:each="invoice:${invoices}">
+  <td>
+    <input type="text" th:text="${invoice.id}" name="invoiceId">
+  </tr>
+  </tbody>
+  </td>
+  <button type="submit">Update</button>
+
 
 </form>
-
